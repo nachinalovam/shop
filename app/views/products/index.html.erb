@@ -1,0 +1,28 @@
+<%- model_class = Product -%>
+<div class="col-md-12">
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  </div>
+  <%= paginate @products %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= model_class.human_attribute_name(:id) %></th>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:price) %></th>
+        <th><%= model_class.human_attribute_name(:count) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= link_to product.id, product_path(product) %></td>
+          <td><%= user.name %></td>
+          <td><%= user.price %></td>
+          <td><%= user.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @products %><br />
+</div>

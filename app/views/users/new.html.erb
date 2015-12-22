@@ -1,0 +1,17 @@
+<h1>Sign up</h1>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :first_name, 'Name' %>
+      <%= f.text_field :first_name %>
+      <%= f.label :last_name, 'Surname' %>
+      <%= f.text_field :last_name %>
+      <%= f.label :email, 'Email' %>
+      <%= f.text_field :email %>
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password %>
+      <%= f.submit "Create an account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
